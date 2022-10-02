@@ -27,10 +27,10 @@ int main()
     char IPV4_address[MAXSIZE];         //A string holding the users input IPV4 address
     char* IPV4_2D[4];                   //To hold the ipv4 numbers without the . in them
     char* binary_big_endian;            //To hold the binary 
-    char* bin_big_endian;               //To hold the binary 
-    uint32_t bin_little_endian_num;     //To hold the binary 
+   // char* bin_big_endian;               //To hold the binary 
+   // uint32_t bin_little_endian_num;     //To hold the binary 
     unsigned int big_decimal;           //hold the decimal number big endian
-    unsigned int little_decimal;        //hold the decimal number little endian
+    //unsigned int little_decimal;        //hold the decimal number little endian
     struct sockaddr_in mine;
     std::string answer = "Y";
 
@@ -54,13 +54,14 @@ while (answer == "Y" || answer =="y")
 
     //Convert the number in s_addr to binary. 
     //Right now its the decimal equivelent inside mine.sin_addr.s_addr
-    unsigned int temp_dec = big_decimal;
-    cout<<"The temp_dec is: "<<temp_dec<<"\n";
-    decimal_to_binary(temp_dec,binary_big_endian);
-    cout<<"I AM HERE"<<"\n";
+
+    decimal_to_binary(big_decimal,binary_big_endian);
     printf("The big endian of the binary number is %s \n",binary_big_endian);
-    little_decimal = ntohl(big_decimal);
-    cout<<"The little decimal is "<<little_decimal<<"\n";
+    printf("Did big deciaml get changed? %u \n",big_decimal);
+
+    //Try to get little endian to print
+    //little_decimal = ntohl(big_decimal);
+    //cout<<"The little decimal is "<<little_decimal<<"\n";
 
 
     cout<<"Do you want to run again?";
