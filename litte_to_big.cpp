@@ -57,7 +57,6 @@ while (answer == "Y" || answer =="y")
 
     decimal_to_binary(big_decimal,binary_big_endian);
     printf("The big endian of the binary number is %s \n",binary_big_endian);
-    printf("Did big deciaml get changed? %u \n",big_decimal);
 
     //Try to get little endian to print
     //little_decimal = ntohl(big_decimal);
@@ -81,11 +80,11 @@ while (counter < 32)
         remainder = changeme % 2;
         if (remainder == 1){
             destination[counter]= '1';
-            cout<<"I am adding 1 to spot"<<counter<<"\n";
+            //cout<<"I am adding 1 to spot"<<counter<<"\n";
         }
         else{
             destination[counter] = '0';
-            cout<<"I am adding 0 to spot"<<counter<<"\n";
+            //cout<<"I am adding 0 to spot"<<counter<<"\n";
         }
         counter++;
         changeme = changeme / 2;
